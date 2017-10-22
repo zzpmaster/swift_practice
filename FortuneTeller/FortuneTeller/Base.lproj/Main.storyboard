@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,30 +16,80 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FortuneTeller" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OldMan" translatesAutoresizingMaskIntoConstraints="NO" id="58R-Ng-Wga">
-                                <rect key="frame" x="-38" y="0.0" width="451" height="667"/>
+                                <rect key="frame" x="38" y="0.0" width="692" height="1024"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="58R-Ng-Wga" secondAttribute="height" multiplier="173:256" id="duo-dV-me1"/>
                                 </constraints>
                             </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="Egt-PO-7Yt">
+                                <rect key="frame" x="183" y="557" width="402" height="228"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Egt-PO-7Yt" secondAttribute="height" multiplier="67:38" id="j6v-Au-zpc"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4FN-3Y-VZ1" userLabel="help view">
+                                <rect key="frame" x="0.0" y="784" width="249" height="240"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="249" id="Sr5-OW-goN"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lg1-Ji-Mlj">
+                                <rect key="frame" x="194" y="873" width="380" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Lg1-Ji-Mlj" secondAttribute="height" multiplier="380:89" id="B7T-NH-Xzb"/>
+                                </constraints>
+                                <state key="normal" image="Button"/>
+                                <state key="highlighted" image="ButtonPressed"/>
+                                <connections>
+                                    <action selector="tellMeSomething:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YfR-8f-mhH"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zW3-N3-Qv9" userLabel="help view2">
+                                <rect key="frame" x="508.5" y="958" width="259.5" height="66"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zW3-N3-Qv9" secondAttribute="height" multiplier="259:66" id="2aJ-XE-Oxd"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.9137254901960784" blue="0.52549019607843139" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Egt-PO-7Yt" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="228:1024" id="8JG-tI-yC7"/>
+                            <constraint firstItem="Lg1-Ji-Mlj" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="89:1024" id="FUP-bp-Xms"/>
                             <constraint firstItem="58R-Ng-Wga" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OAm-Ot-TBR"/>
+                            <constraint firstItem="zW3-N3-Qv9" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="RVv-mB-lP8"/>
+                            <constraint firstItem="zW3-N3-Qv9" firstAttribute="top" secondItem="Lg1-Ji-Mlj" secondAttribute="bottom" constant="-4" id="TTO-0C-RCc"/>
                             <constraint firstItem="58R-Ng-Wga" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Wt7-yC-5R0"/>
+                            <constraint firstItem="4FN-3Y-VZ1" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="240:1024" id="YrB-vf-GtH"/>
+                            <constraint firstItem="zW3-N3-Qv9" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="66:1024" id="euW-mQ-LCX"/>
+                            <constraint firstItem="4FN-3Y-VZ1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="h8d-BU-D9i"/>
+                            <constraint firstItem="4FN-3Y-VZ1" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="key-5j-lIw"/>
+                            <constraint firstItem="zW3-N3-Qv9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="l8v-YN-5mF"/>
+                            <constraint firstItem="Egt-PO-7Yt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="meZ-Qa-KhJ"/>
                             <constraint firstItem="58R-Ng-Wga" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="q9D-Zx-bnA"/>
+                            <constraint firstItem="Lg1-Ji-Mlj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yDM-1Z-faU"/>
+                            <constraint firstItem="4FN-3Y-VZ1" firstAttribute="top" secondItem="Egt-PO-7Yt" secondAttribute="bottom" constant="-1" id="yYI-0k-a7H"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="yourFortune" destination="Egt-PO-7Yt" id="Bim-ye-Q13"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.5" y="132.421875"/>
         </scene>
     </scenes>
     <resources>
+        <image name="1" width="402" height="227"/>
+        <image name="Button" width="380" height="85"/>
+        <image name="ButtonPressed" width="380" height="85"/>
         <image name="OldMan" width="692" height="1024"/>
     </resources>
 </document>
