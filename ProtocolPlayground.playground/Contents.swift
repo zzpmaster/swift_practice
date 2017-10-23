@@ -42,6 +42,71 @@ poorGuy.helper = NormalMan()
 poorGuy.needMoney()
 
 
+/**
+ 例子2
+ 可以代替继承
+ */
+protocol MankindType {
+    var health: Int { get set }
+}
+
+protocol Attackable {
+    func attack(target: Hurtable)   // 协议可以当做参数
+}
+
+protocol Hurtable: MankindType {
+    func getHurt()
+}
+
+class Man: MankindType, Hurtable {
+    var health: Int
+    init() {
+        health = 10
+    }
+    
+    func getHurt() {
+        health -= 10
+    }
+}
+
+class Batman: MankindType, Attackable, Hurtable {
+    var health: Int
+    init() {
+        health = 1000
+    }
+    
+    func getHurt() {
+        health -= 5
+    }
+    
+    func attack(target: Hurtable) {
+        target.getHurt()    // 可以调用自己的getHurt，以为已经实现了Hurtable的协议
+    }
+}
+
+class Superman: MankindType, Attackable, Hurtable {
+    var health: Int
+    init() {
+        health = 10000
+    }
+    func getHurt() {
+        health -= 1
+    }
+    func attack(target: Hurtable) {
+        target.getHurt() // 可以调用自己的getHurt，以为已经实现了Hurtable的协议
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
